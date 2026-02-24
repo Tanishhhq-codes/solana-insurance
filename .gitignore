@@ -1,0 +1,38 @@
+# Node
+node_modules/
+dist/
+build/
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Anchor
+target/
+**/target/
+**/*.rs.bk
+
+# Solana
+test-ledger/
+*.json
+
+# Rust
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+
+# Mac
+.DS_Store
+
+# Environment
+.env.local
+.env.development
+.env.production
