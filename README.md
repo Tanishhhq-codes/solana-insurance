@@ -238,8 +238,4 @@ cd program
 anchor build
 ```
 
----
 
-# 📜 License
-
-MIT License
