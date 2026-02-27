@@ -1,237 +1,224 @@
-# 🌾 Solana Insurance
+🚧 Project Status
 
-A decentralized parametric crop insurance system built on Solana using Anchor. Farmers receive automatic payouts when rainfall exceeds predefined thresholds.
+This project is currently under development.
 
----
+Core features being implemented:
 
-# 📁 Project Structure
+Smart contract logic
 
-```
+Backend weather integration
+
+Automatic payout execution
+🌾 Solana Insurance
+
+Solana Insurance is a decentralized parametric crop insurance system built on the Solana blockchain using the Anchor framework.
+
+It allows farmers to create insurance policies and automatically receive payouts when predefined weather conditions (such as excessive rainfall) occur, without requiring manual claim processing.
+
+This project is currently under active development.
+
+⚠️ Problem Statement
+
+Crop insurance is essential for farmers, especially in regions where weather conditions are unpredictable. However, traditional crop insurance systems face several major issues:
+
+Manual claim process — farmers must file claims and wait for verification
+
+Slow payouts — compensation can take weeks or months
+
+Lack of transparency — farmers cannot verify how decisions are made
+
+Risk of corruption or manipulation
+
+Administrative overhead increases costs
+
+These inefficiencies make insurance unreliable and inaccessible for many farmers.
+
+💡 Proposed Solution
+
+Solana Insurance solves these problems using blockchain technology and smart contracts.
+
+Instead of relying on manual claim processing, the system uses predefined conditions (such as rainfall thresholds). When the condition is met, the smart contract automatically executes the payout.
+
+This approach is called parametric insurance.
+
+Key benefits:
+
+Automatic payouts
+
+No manual claims required
+
+Transparent and verifiable logic
+
+Faster and more reliable compensation
+
+Reduced administrative overhead
+
+⚡ Why Solana?
+
+Solana is a high-performance blockchain designed for scalability and speed.
+
+Key advantages of Solana:
+
+Very fast transactions (thousands per second)
+
+Extremely low transaction fees
+
+Suitable for real-time applications
+
+Efficient smart contract execution
+
+Widely used for decentralized applications (dApps)
+
+These features make Solana ideal for an automated insurance system.
+
+This project uses the Anchor framework, which simplifies Solana smart contract development.
+
+⚙️ How the System Works
+Step 1 — Farmer connects wallet
+
+The farmer connects their Solana wallet (such as Phantom) to the frontend application.
+
+This wallet acts as their identity and receives payouts.
+
+Step 2 — Farmer creates insurance policy
+
+The farmer provides:
+
+Location
+
+Rainfall threshold
+
+Premium amount
+
+Payout amount
+
+This policy is stored on the Solana blockchain using a smart contract.
+
+Step 3 — Weather data is monitored
+
+The backend system fetches rainfall data from external weather APIs.
+
+Example:
+
+Location: Meerut
+Rainfall threshold: 100mm
+Actual rainfall: 120mm
+
+Step 4 — Smart contract triggers automatic payout
+
+When the rainfall exceeds the threshold:
+
+The smart contract verifies the condition
+
+Automatically transfers payout to the farmer’s wallet
+
+No manual claim is required
+
+🧠 System Architecture
+Farmer Wallet
+     │
+     ▼
+Frontend (React + TypeScript)
+     │
+     ▼
+Solana Smart Contract (Anchor)
+     │
+     ▼
+Blockchain Storage
+     │
+     ▼
+Backend (Weather Data Oracle)
+     │
+     ▼
+Automatic Payout
+📁 Project Structure
 solana-insurance/
 │
-├── frontend/                # React + TypeScript frontend
-│   ├── src/
-│   │   ├── components/     # UI components (PolicyForm, etc.)
-│   │   ├── pages/          # Pages (Home, Dashboard)
-│   │   ├── services/       # Solana connection logic
-│   │   ├── types/          # TypeScript interfaces
-│   │   └── main.tsx
-│   └── package.json
+├── frontend/        # User interface and wallet connection
 │
-├── programs/
-│   └── solana-insurance/   # Anchor smart contract
-│       ├── programs/
-│       │   └── solana_insurance/
-│       │       └── src/lib.rs   # Main smart contract
-│       ├── tests/               # Anchor tests
-│       ├── Anchor.toml
-│       └── Cargo.toml
+├── program/         # Solana smart contract (Anchor)
+│   └── src/lib.rs
 │
-├── backend/                # Backend (Oracle + DB integration) [WIP]
+├── backend/         # Weather data integration (in progress)
 │
-├── database/               # Database schema and migrations
+├── database/        # Database schema and storage (in progress)
 │
-├── docs/                   # Documentation
-│
-├── .gitignore
 └── README.md
-```
+🔄 Current Workflow (Development Phase)
 
----
+Currently implemented:
 
-# ⚙️ Prerequisites
+Frontend wallet connection
 
-Install these first:
+Insurance policy creation interface
 
-## 1. Install Node.js (v18+)
+Anchor smart contract structure
 
-https://nodejs.org
+Solana devnet integration
 
-Check:
+In progress:
 
-```
-node -v
-npm -v
-```
+Smart contract policy storage
 
----
+Backend weather data integration
 
-## 2. Install Rust
+Automatic payout logic
 
-```
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-```
+Database integration
 
-Check:
+🛠 Technology Stack
 
-```
-rustc --version
-```
+Frontend:
 
----
+React
 
-## 3. Install Solana CLI
+TypeScript
 
-```
-sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
-```
+Solana Wallet Adapter
 
-Restart terminal, then check:
+Blockchain:
 
-```
-solana --version
-```
+Solana
 
-Set devnet:
+Anchor Framework
 
-```
-solana config set --url devnet
-```
+Rust
 
----
+Backend (planned):
 
-## 4. Install Anchor
+Node.js
 
-```
-cargo install --git https://github.com/coral-xyz/anchor anchor-cli --locked
-```
+Weather API integration
 
-Check:
+Database (planned):
 
-```
-anchor --version
-```
+PostgreSQL or MongoDB
 
----
+🌐 Network
 
-# 🚀 How to Clone and Run Project
+Currently running on:
 
-## Step 1 — Clone repository
+Solana Devnet (for development and testing)
 
-```
+
+🎯 Goal
+
+The goal of this project is to create a transparent, automated, and efficient crop insurance system using blockchain technology.
+
+👨‍💻 Local Setup
+
+Clone repository:
+
 git clone https://github.com/YOUR_USERNAME/solana-insurance.git
 cd solana-insurance
-```
 
----
+Run frontend:
 
-## Step 2 — Run Frontend
-
-```
 cd frontend
 npm install
 npm run dev
-```
 
-Open browser:
+Build smart contract:
 
-```
-http://localhost:5173
-```
-
-Connect Phantom wallet.
-
----
-
-## Step 3 — Build Anchor Program
-
-From root folder:
-
-```
-cd programs/solana-insurance
+cd program
 anchor build
-```
-
----
-
-## Step 4 — Run Local Validator (optional)
-
-```
-solana-test-validator
-```
-
-In another terminal:
-
-```
-anchor deploy
-```
-
----
-
-# 🌐 Network
-
-Currently configured for:
-
-```
-Solana Devnet
-```
-
----
-
-# 👨‍💻 How to Contribute
-
-## 1. Fork repository
-
-Click Fork on GitHub.
-
----
-
-## 2. Clone your fork
-
-```
-git clone https://github.com/YOUR_USERNAME/solana-insurance.git
-```
-
----
-
-## 3. Create new branch
-
-```
-git checkout -b feature-name
-```
-
----
-
-## 4. Commit changes
-
-```
-git commit -m "Added new feature"
-```
-
----
-
-## 5. Push changes
-
-```
-git push origin feature-name
-```
-
-Create Pull Request on GitHub.
-
----
-
-# 🔮 Planned Features
-
-* Smart contract insurance logic
-* Automatic rainfall oracle integration
-* Database integration
-* Farmer dashboard
-* Policy NFTs
-
----
-
-# 🧠 Tech Stack
-
-* Solana
-* Anchor
-* Rust
-* React
-* TypeScript
-* Node.js
-* PostgreSQL
-
----
-
-# 📜 License
-
-MIT License
