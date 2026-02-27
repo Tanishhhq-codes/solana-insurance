@@ -19,8 +19,7 @@ target/
 **/*.rs.bk
 
 # Solana
-test-ledger/
-*.json
+test-ledger
 
 # Rust
 Cargo.lock
