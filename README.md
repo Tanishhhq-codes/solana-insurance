@@ -9,6 +9,8 @@ Smart contract logic
 Backend weather integration
 
 Automatic payout execution
+
+
 🌾 Solana Insurance
 
 Solana Insurance is a decentralized parametric crop insurance system built on the Solana blockchain using the Anchor framework.
